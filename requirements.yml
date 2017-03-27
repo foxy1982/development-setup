@@ -1,0 +1,7 @@
+# from galaxy
+- src: gantsign.atom
+- src: telusdigital.python
+- src: geerlingguy.nodejs
+- src: angstwad.docker_ubuntu
+- src: ocha.dotnet-core
+- src: gantsign.visual-studio-code

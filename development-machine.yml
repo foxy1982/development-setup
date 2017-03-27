@@ -1,0 +1,27 @@
+---
+- name: Install everything needed for a development machine
+  hosts: development
+  user: development
+  become: development
+  vars:
+  roles:
+    - role: gantsign.atom
+      users:
+      - username: development
+        atom_packages:
+          - minimap
+          - linter
+          - atom-beautify
+    - role: telusdigital.python
+      become: yes
+      packages:
+      - boto
+      - awscli
+    - role: geerlingguy.nodejs
+      become: yes
+    - role: angstwad.docker_ubuntu
+      become: yes
+    - role: ocha.dotnet-core
+      become: yes
+    - role: gantsign.visual-studio-code
+      become: yes
