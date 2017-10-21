@@ -1,17 +1,10 @@
 ---
 - name: Install everything needed for a development machine
   hosts: development
-  user: development
-  become: development
+  user: dan
+  become: dan
   vars:
   roles:
-    - role: gantsign.atom
-      users:
-      - username: development
-        atom_packages:
-          - minimap
-          - linter
-          - atom-beautify
     - role: telusdigital.python
       become: yes
       packages:

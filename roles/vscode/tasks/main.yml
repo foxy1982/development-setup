@@ -1,0 +1,15 @@
+---
+- name: create vscode download folder
+  file:
+    state: directory
+    path: /tmp/ansible/Downloads/
+
+- name: Download vscode
+  get_url: 
+    url: https://go.microsoft.com/fwlink/?LinkID=760868
+    dest: /tmp/ansible/Downloads/vscode.deb
+
+- name: Install vscode
+  apt:
+    deb: /tmp/ansible/Downloads/vscode.deb
+  sudo: true

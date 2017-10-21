@@ -1,0 +1,28 @@
+---
+- name: install gcc
+  apt:
+    name: gcc
+    state: present
+
+- name: install make
+  apt:
+    name: make
+    state: present
+
+- name: create haskell download folder
+  file:
+    state: directory
+    path: /tmp/haskell/
+
+- name: download haskell stack
+  get_url:
+    url: https://get.haskellstack.org/
+    dest: /tmp/haskell/
+
+- name: setup haskell stack
+  command: stack setup
+
+- name: install ghc
+  apt:
+    name: ghc
+    state: present

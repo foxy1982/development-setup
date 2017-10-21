@@ -1,0 +1,10 @@
+---
+- name: Install everything needed for a development machine
+  hosts: development
+  user: dan
+  become: dan
+  vars:
+  roles:
+    - role: haskell
+    - role: dotnet
+    - role: vscode
